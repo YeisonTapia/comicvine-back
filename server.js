@@ -5,10 +5,12 @@ const http = require('http')
 const asyncify = require('express-asyncify')
 const app = asyncify(express())
 const server = http.createServer(app)
+var cors = require('cors')
 
 const api = require('./api')
 const port = process.env.PORT || 3000
 
+app.use(cors())
 app.use('/api', api)
 
 app.use((err, req, res, next) => {
