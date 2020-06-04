@@ -6,8 +6,8 @@ const api = asyncify(express.Router())
 
 const comicvineService = require('./services/comicvine')
 
-api.get('/issues', async (req, res, next) => {
-  const { filter, limit, offset } = req.query
+api.get('/', async (req, res, next) => {
+  const { filter, limit, offset, resource } = req.query
   let data = {}
   let params = {
     filter,
@@ -15,7 +15,7 @@ api.get('/issues', async (req, res, next) => {
     offset
   }
   try {
-    data = await comicvineService('issues', params)
+    data = await comicvineService(resource, params)
   } catch (e) {
     return next(e)
   }
