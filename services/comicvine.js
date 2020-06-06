@@ -7,6 +7,7 @@ const COMICVINE_API_KEY = process.env.COMICVINE_API_KEY || 'b72f944ecb1b2423b562
 const COMICVINE_FORMAT = process.env.COMICVINE_FORMAT || 'json'
 
 module.exports = async function (uri, params = {}) {
+  console.log('Get fresh data')
   params.api_key = COMICVINE_API_KEY
   params.format = COMICVINE_FORMAT
   const url = `${COMICVINE_URL}/${uri}`

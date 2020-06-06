@@ -15,7 +15,8 @@
     "axios": "^0.19.2",
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "express-asyncify": "^1.0.1"
+    "express-asyncify": "^1.0.1",
+    "memory-cache": "^0.2.0"
   },
   "devDependencies": {
     "standard": "^14.3.4"

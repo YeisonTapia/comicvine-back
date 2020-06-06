@@ -5,8 +5,9 @@ const asyncify = require('express-asyncify')
 const api = asyncify(express.Router())
 
 const comicvineService = require('./services/comicvine')
+const CacheMiddleware = require('./middlewares/cache')
 
-api.get('/:resource', async (req, res, next) => {
+api.get('/:resource', CacheMiddleware(360), async (req, res, next) => {
   const { filter, limit, offset } = req.query
   const { resource } = req.params
   let data = {}
