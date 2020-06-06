@@ -10,6 +10,6 @@ module.exports = async function (uri, params = {}) {
   params.api_key = COMICVINE_API_KEY
   params.format = COMICVINE_FORMAT
   const url = `${COMICVINE_URL}/${uri}`
-  const result = await axios.get(url, {params})
+  const result = await axios.get(url, { params })
   return result.data
 }

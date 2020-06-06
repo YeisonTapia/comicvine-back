@@ -10,7 +10,7 @@ api.get('/:resource', async (req, res, next) => {
   const { filter, limit, offset } = req.query
   const { resource } = req.params
   let data = {}
-  let params = {
+  const params = {
     filter,
     limit,
     offset
